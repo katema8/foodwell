@@ -11,53 +11,41 @@
         </a>
       </div>
 
-      <!-- Edit link food_item start -->
       <div class="col">
         <a href="/food_items/<%= @food_item.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit food item
         </a>
       </div>
-      <!-- Edit link food_item end -->
 
-      <!-- Delete link food_item start -->
       <div class="col">
         <a href="/delete_food_item/<%= @food_item.id %>" class="btn btn-block btn-outline-secondary">
           Delete food item
         </a>
       </div>
-      <!-- Delete link food_item end -->
     </div>
 
     <dl>
       <dt>
         Food item
       </dt>
-      <!-- Display food_item start -->
       <dd>
         <%= @food_item.food_item %>
       </dd>
-      <!-- Display food_item end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@food_item.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@food_item.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

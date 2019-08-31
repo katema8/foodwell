@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form wellness_log start -->
 <form action="/create_wellness_log" method="post">
-<!-- Form wellness_log end -->
 
-  <!-- Label and input for gut_wellness start -->
   <div class="form-group">
     <label for="gut_wellness">
       Gut wellness
     </label>
 
-    <!-- Input for gut_wellness start -->
     <input type="text" id="gut_wellness" name="gut_wellness" class="form-control">
-    <!-- Input for gut_wellness end -->
   </div>
-  <!-- Label and input for gut_wellness end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :username, @wellness_log.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create wellness log

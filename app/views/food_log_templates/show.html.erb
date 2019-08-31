@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link food_log start -->
       <div class="col">
         <a href="/food_logs/<%= @food_log.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit food log
         </a>
       </div>
-      <!-- Edit link food_log end -->
 
-      <!-- Delete link food_log start -->
       <div class="col">
         <a href="/delete_food_log/<%= @food_log.id %>" class="btn btn-block btn-outline-secondary">
           Delete food log
         </a>
       </div>
-      <!-- Delete link food_log end -->
     </div>
 
     <dl>
       <dt>
         Food item
       </dt>
-      <!-- Display food_item_id start -->
       <dd>
         <%= @food_log.food_item_id %>
       </dd>
-      <!-- Display food_item_id end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @food_log.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Wellness log
       </dt>
-      <!-- Display wellness_log_id start -->
       <dd>
         <% if @food_log.wellness_log.present? %>
           <a href="/wellness_logs/<%= @food_log.wellness_log_id %>">
@@ -58,12 +49,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display wellness_log_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @food_log.user.present? %>
           <a href="/users/<%= @food_log.user_id %>">
@@ -71,28 +60,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@food_log.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@food_log.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

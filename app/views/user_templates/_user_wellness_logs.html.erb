@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.wellness_logs.each do |wellness_log| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/wellness_logs/<%= wellness_log.id %>">
           <%= wellness_log.gut_wellness %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

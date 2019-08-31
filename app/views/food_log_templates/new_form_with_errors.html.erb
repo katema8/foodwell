@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @food_log.present? %>
   <% if @food_log.errors.any? %>
     <% @food_log.errors.full_messages.each do |message| %>
@@ -16,57 +15,39 @@
 
 <hr>
 
-<!-- Form food_log start -->
 <form action="/create_food_log" method="post">
-<!-- Form food_log end -->
 
-  <!-- Label and input for food_item_id start -->
   <div class="form-group">
     <label for="food_item_id">
       Food item
     </label>
 
-    <!-- Input for food_item_id start -->
     <input type="text" id="food_item_id" name="food_item_id" class="form-control" value="<%= @food_log.food_item_id %>">
-    <!-- Input for food_item_id end -->
   </div>
-  <!-- Label and input for food_item_id end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control" value="<%= @food_log.date %>">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for wellness_log_id start -->
   <div class="form-group">
     <label for="wellness_log_id">
       Wellness log
     </label>
 
-    <!-- Input for wellness_log_id start -->
     <%= select_tag(:wellness_log_id, options_from_collection_for_select(WellnessLog.all, :id, :gut_wellness, @food_log.wellness_log_id), :class => "form-control") %>
-    <!-- Input for wellness_log_id end -->
   </div>
-  <!-- Label and input for wellness_log_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :username, @food_log.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create food log

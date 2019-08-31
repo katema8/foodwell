@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link wellness_log start -->
       <div class="col">
         <a href="/wellness_logs/<%= @wellness_log.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit wellness log
         </a>
       </div>
-      <!-- Edit link wellness_log end -->
 
-      <!-- Delete link wellness_log start -->
       <div class="col">
         <a href="/delete_wellness_log/<%= @wellness_log.id %>" class="btn btn-block btn-outline-secondary">
           Delete wellness log
         </a>
       </div>
-      <!-- Delete link wellness_log end -->
     </div>
 
     <dl>
       <dt>
         Gut wellness
       </dt>
-      <!-- Display gut_wellness start -->
       <dd>
         <%= @wellness_log.gut_wellness %>
       </dd>
-      <!-- Display gut_wellness end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @wellness_log.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @wellness_log.user.present? %>
           <a href="/users/<%= @wellness_log.user_id %>">
@@ -58,33 +49,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@wellness_log.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@wellness_log.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "wellness_log_templates/wellness_log_food_logs" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
