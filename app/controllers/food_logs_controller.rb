@@ -1,6 +1,7 @@
 class FoodLogsController < ApplicationController
   def index
-    @food_logs = FoodLog.page(params[:page]).per(10)
+    @q = FoodLog.ransack(params[:q])
+    @food_logs = @q.result(:distinct => true).includes(:user, :wellness_log).page(params[:page]).per(10)
 
     render("food_log_templates/index.html.erb")
   end

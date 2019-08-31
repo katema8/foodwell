@@ -1,6 +1,7 @@
 class WellnessLogsController < ApplicationController
   def index
-    @wellness_logs = WellnessLog.page(params[:page]).per(10)
+    @q = WellnessLog.ransack(params[:q])
+    @wellness_logs = @q.result(:distinct => true).includes(:user, :food_logs).page(params[:page]).per(10)
 
     render("wellness_log_templates/index.html.erb")
   end
