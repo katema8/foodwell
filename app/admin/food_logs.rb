@@ -1,4 +1,6 @@
 ActiveAdmin.register FoodLog do
+
+ permit_params :food_item_id, :date, :wellness_log_id, :user_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
