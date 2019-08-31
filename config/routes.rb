@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "food_logs#index"
   # Routes for the Food item resource:
 
   # CREATE
