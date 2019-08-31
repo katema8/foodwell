@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :food_logs,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
