@@ -55,6 +55,14 @@ class WellnessLogsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @wellness_log = WellnessLog.find(params.fetch("id_to_remove"))
+
+    @wellness_log.destroy
+
+    redirect_to("/users/#{@wellness_log.user_id}", notice: "WellnessLog deleted successfully.")
+  end
+
   def destroy_row
     @wellness_log = WellnessLog.find(params.fetch("id_to_remove"))
 

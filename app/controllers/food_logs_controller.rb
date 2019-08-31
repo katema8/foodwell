@@ -57,6 +57,22 @@ class FoodLogsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @food_log = FoodLog.find(params.fetch("id_to_remove"))
+
+    @food_log.destroy
+
+    redirect_to("/users/#{@food_log.user_id}", notice: "FoodLog deleted successfully.")
+  end
+
+  def destroy_row_from_wellness_log
+    @food_log = FoodLog.find(params.fetch("id_to_remove"))
+
+    @food_log.destroy
+
+    redirect_to("/wellness_logs/#{@food_log.wellness_log_id}", notice: "FoodLog deleted successfully.")
+  end
+
   def destroy_row
     @food_log = FoodLog.find(params.fetch("id_to_remove"))
 
