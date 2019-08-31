@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Wellness log resource:
+
+  # CREATE
+  get("/wellness_logs/new", { :controller => "wellness_logs", :action => "new_form" })
+  post("/create_wellness_log", { :controller => "wellness_logs", :action => "create_row" })
+
+  # READ
+  get("/wellness_logs", { :controller => "wellness_logs", :action => "index" })
+  get("/wellness_logs/:id_to_display", { :controller => "wellness_logs", :action => "show" })
+
+  # UPDATE
+  get("/wellness_logs/:prefill_with_id/edit", { :controller => "wellness_logs", :action => "edit_form" })
+  post("/update_wellness_log/:id_to_modify", { :controller => "wellness_logs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_wellness_log/:id_to_remove", { :controller => "wellness_logs", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 

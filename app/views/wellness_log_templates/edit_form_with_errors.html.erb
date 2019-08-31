@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @wellness_log.errors.any? %>
+  <% @wellness_log.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit wellness log #<%= @wellness_log.id %>
+</h1>
+
+<hr>
+
+<!-- Form wellness_log start -->
+<form action="/update_wellness_log/<%= @wellness_log.id %>" method="post">
+<!-- Form wellness_log end -->
+
+  <!-- Label and input for gut_wellness start -->
+  <div class="form-group">
+    <label for="gut_wellness">
+      Gut wellness
+    </label>
+
+    <!-- Input for gut_wellness start -->
+    <input type="text" id="gut_wellness" name="gut_wellness" class="form-control" value="<%= @wellness_log.gut_wellness %>">
+    <!-- Input for gut_wellness end -->
+  </div>
+  <!-- Label and input for gut_wellness end -->
+
+  <!-- Label and input for date start -->
+  <div class="form-group">
+    <label for="date">
+      Date
+    </label>
+
+    <!-- Input for date start -->
+    <input type="text" id="date" name="date" class="form-control" value="<%= @wellness_log.date %>">
+    <!-- Input for date end -->
+  </div>
+  <!-- Label and input for date end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @wellness_log.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update wellness log
+  </button>
+</form>
+
+<hr>
+
+<a href="/wellness_logs">
+  Go back
+</a>
