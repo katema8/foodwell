@@ -6,6 +6,7 @@ class WellnessLogsController < ApplicationController
   end
 
   def show
+    @food_log = FoodLog.new
     @wellness_log = WellnessLog.find(params.fetch("id_to_display"))
 
     render("wellness_log_templates/show.html.erb")

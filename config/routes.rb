@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/food_logs/new", { :controller => "food_logs", :action => "new_form" })
   post("/create_food_log", { :controller => "food_logs", :action => "create_row" })
+  post("/create_food_log_from_wellness_log", { :controller => "food_logs", :action => "create_row_from_wellness_log" })
 
   # READ
   get("/food_logs", { :controller => "food_logs", :action => "index" })
