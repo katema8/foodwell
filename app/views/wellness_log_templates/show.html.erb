@@ -52,7 +52,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @wellness_log.user_id %>
+        <% if @wellness_log.user.present? %>
+          <a href="/users/<%= @wellness_log.user_id %>">
+            <%= @wellness_log.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

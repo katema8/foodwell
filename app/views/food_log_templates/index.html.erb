@@ -78,13 +78,21 @@
 
         <!-- Display food_log.wellness_log_id start -->
         <td>
-          <%= food_log.wellness_log.gut_wellness %>
+          <% if food_log.wellness_log.present? %>
+            <a href="/wellness_logs/<%= food_log.wellness_log.id %>">
+              <%= food_log.wellness_log.gut_wellness %>
+            </a>
+          <% end %>
         </td>
         <!-- Display food_log.wellness_log_id end -->
 
         <!-- Display food_log.user_id start -->
         <td>
-          <%= food_log.user.username %>
+          <% if food_log.user.present? %>
+            <a href="/users/<%= food_log.user.id %>">
+              <%= food_log.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display food_log.user_id end -->
 

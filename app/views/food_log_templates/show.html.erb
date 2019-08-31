@@ -52,7 +52,11 @@
       </dt>
       <!-- Display wellness_log_id start -->
       <dd>
-        <%= @food_log.wellness_log_id %>
+        <% if @food_log.wellness_log.present? %>
+          <a href="/wellness_logs/<%= @food_log.wellness_log_id %>">
+            <%= @food_log.wellness_log.gut_wellness %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display wellness_log_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @food_log.user_id %>
+        <% if @food_log.user.present? %>
+          <a href="/users/<%= @food_log.user_id %>">
+            <%= @food_log.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

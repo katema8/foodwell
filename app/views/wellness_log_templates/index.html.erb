@@ -74,7 +74,11 @@
 
         <!-- Display wellness_log.user_id start -->
         <td>
-          <%= wellness_log.user.username %>
+          <% if wellness_log.user.present? %>
+            <a href="/users/<%= wellness_log.user.id %>">
+              <%= wellness_log.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display wellness_log.user_id end -->
 
