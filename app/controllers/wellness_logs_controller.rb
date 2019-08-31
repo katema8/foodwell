@@ -1,6 +1,6 @@
 class WellnessLogsController < ApplicationController
   def index
-    @wellness_logs = WellnessLog.all
+    @wellness_logs = WellnessLog.page(params[:page]).per(10)
 
     render("wellness_log_templates/index.html.erb")
   end
