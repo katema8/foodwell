@@ -1,0 +1,77 @@
+<!-- Validation failure messages -->
+<% if @food_log.errors.any? %>
+  <% @food_log.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit food log #<%= @food_log.id %>
+</h1>
+
+<hr>
+
+<!-- Form food_log start -->
+<form action="/update_food_log/<%= @food_log.id %>" method="post">
+<!-- Form food_log end -->
+
+  <!-- Label and input for food_item_id start -->
+  <div class="form-group">
+    <label for="food_item_id">
+      Food item
+    </label>
+
+    <!-- Input for food_item_id start -->
+    <input type="text" id="food_item_id" name="food_item_id" class="form-control" value="<%= @food_log.food_item_id %>">
+    <!-- Input for food_item_id end -->
+  </div>
+  <!-- Label and input for food_item_id end -->
+
+  <!-- Label and input for date start -->
+  <div class="form-group">
+    <label for="date">
+      Date
+    </label>
+
+    <!-- Input for date start -->
+    <input type="text" id="date" name="date" class="form-control" value="<%= @food_log.date %>">
+    <!-- Input for date end -->
+  </div>
+  <!-- Label and input for date end -->
+
+  <!-- Label and input for wellness_log_id start -->
+  <div class="form-group">
+    <label for="wellness_log_id">
+      Wellness log
+    </label>
+
+    <!-- Input for wellness_log_id start -->
+    <input type="text" id="wellness_log_id" name="wellness_log_id" class="form-control" value="<%= @food_log.wellness_log_id %>">
+    <!-- Input for wellness_log_id end -->
+  </div>
+  <!-- Label and input for wellness_log_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @food_log.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update food log
+  </button>
+</form>
+
+<hr>
+
+<a href="/food_logs">
+  Go back
+</a>
