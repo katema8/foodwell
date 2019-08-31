@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for wellness_log_id start -->
-    <input type="text" id="wellness_log_id" name="wellness_log_id" class="form-control" value="<%= @food_log.wellness_log_id %>">
+    <%= select_tag(:wellness_log_id, options_from_collection_for_select(WellnessLog.all, :id, :gut_wellness, @food_log.wellness_log_id), :class => "form-control") %>
     <!-- Input for wellness_log_id end -->
   </div>
   <!-- Label and input for wellness_log_id end -->
