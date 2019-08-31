@@ -1,0 +1,41 @@
+<!-- Validation failure messages -->
+<% if @food_item.errors.any? %>
+  <% @food_item.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit food item #<%= @food_item.id %>
+</h1>
+
+<hr>
+
+<!-- Form food_item start -->
+<form action="/update_food_item/<%= @food_item.id %>" method="post">
+<!-- Form food_item end -->
+
+  <!-- Label and input for food_item start -->
+  <div class="form-group">
+    <label for="food_item">
+      Food item
+    </label>
+
+    <!-- Input for food_item start -->
+    <input type="text" id="food_item" name="food_item" class="form-control" value="<%= @food_item.food_item %>">
+    <!-- Input for food_item end -->
+  </div>
+  <!-- Label and input for food_item end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update food item
+  </button>
+</form>
+
+<hr>
+
+<a href="/food_items">
+  Go back
+</a>

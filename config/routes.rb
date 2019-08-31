@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Food item resource:
+
+  # CREATE
+  get("/food_items/new", { :controller => "food_items", :action => "new_form" })
+  post("/create_food_item", { :controller => "food_items", :action => "create_row" })
+
+  # READ
+  get("/food_items", { :controller => "food_items", :action => "index" })
+  get("/food_items/:id_to_display", { :controller => "food_items", :action => "show" })
+
+  # UPDATE
+  get("/food_items/:prefill_with_id/edit", { :controller => "food_items", :action => "edit_form" })
+  post("/update_food_item/:id_to_modify", { :controller => "food_items", :action => "update_row" })
+
+  # DELETE
+  get("/delete_food_item/:id_to_remove", { :controller => "food_items", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Wellness log resource:
 
   # CREATE
